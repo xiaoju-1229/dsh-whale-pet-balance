@@ -44,7 +44,11 @@ jobs:
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*.exe
-          generate_release_notes: true
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          $exes = Get-ChildItem dist -Filter *.exe | ForEach-Object { $_.FullName }
+          gh release create $tag $exes --title "$tag" --generate-notes
+          Write-Host "release created: $tag"
