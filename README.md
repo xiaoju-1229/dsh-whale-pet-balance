@@ -73,6 +73,16 @@ npm run dist          # 打包 Windows exe（nsis + portable）
 
 **每轮花费**：每轮对话结束后，鲸鱼娘右上角自动弹出「💸 本轮花费 ¥X.XX」，约 5 秒后消失。
 
+## 🙏 致谢
+
+本项目是两个开源项目的合并版本，特别感谢原作者：
+
+- [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet) —— 作者 [AsahiMoon](https://github.com/AsahiMoon)，桌宠本体（Electron 桌宠、状态机、DSH 联动）
+- [DeepSeek-Balance-Whale-Widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) —— 作者 [MeteorNOX](https://github.com/MeteorNOX)，余额查询与峰谷计费逻辑
+- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 鲸鱼娘角色素材（ZipZipPipe 绘制）
+
+三个上游项目均以 MIT License 开源，本合并版本同样以 MIT License 发布。
+
 ## 📄 许可
 
 MIT License。
