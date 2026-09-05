@@ -6,6 +6,29 @@
 > 在其基础上集成了 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（MIT）
 > 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（MIT，详见 [NOTICE.md](NOTICE.md)）。
 
+## 🚀 快速开始（新手 3 步）
+
+> 前提：已安装 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness)。
+
+**① 获取 DeepSeek API Key**（余额功能必需）
+打开 [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)，创建一个 `sk-` 开头的 Key。
+
+**② 安装插件**（在终端执行一条命令）
+
+```sh
+dsh plugin --profile web add github:xiaoju-1229/dsh-whale-pet-balance
+```
+
+**③ 配置 Key，然后重启 `dsh web`**
+
+编辑 `~/.dsh/.credentials.yaml`，加一行：
+
+```yaml
+DEEPSEEK_API_KEY: sk-你复制的Key
+```
+
+重启后鲸鱼娘就出现在桌面了 🐋（没配 Key 也能先跑桌宠，只是余额显示「未配置」）。
+
 ## 🎯 核心亮点
 
 - 🐋💰 **一鱼两用**：会动的桌面桌宠 + DeepSeek 余额管家，合二为一
