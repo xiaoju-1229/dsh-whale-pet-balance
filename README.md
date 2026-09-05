@@ -6,6 +6,13 @@
 > 在其基础上集成了 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（MIT）
 > 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（MIT，详见 [NOTICE.md](NOTICE.md)）。
 
+## 🎯 核心亮点
+
+- 🐋💰 **一只鲸鱼娘，两种能力**：会动的桌面桌宠 + DeepSeek 余额管家，合二为一
+- 🎯 **精确计费**：每轮对话按真实 token 用量 + 官方峰谷价换算，不是估算
+- 🚀 **零门槛**：只需一个 `DEEPSEEK_API_KEY`，无需网页令牌
+- ⚡ **即装即用**：一条命令安装，重启 `dsh web` 即生效
+
 ## ✨ 特性
 
 ### 桌宠（继承自原版）
