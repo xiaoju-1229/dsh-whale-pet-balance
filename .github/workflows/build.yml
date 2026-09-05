@@ -50,5 +50,5 @@ jobs:
         run: |
           $tag = $env:GITHUB_REF_NAME
           $exes = Get-ChildItem dist -Filter *.exe | ForEach-Object { $_.FullName }
-          gh release create $tag $exes --title "$tag" --generate-notes
+          gh release create $tag $exes --title "$tag" --notes-file scripts/release-notes.md
           Write-Host "release created: $tag"
