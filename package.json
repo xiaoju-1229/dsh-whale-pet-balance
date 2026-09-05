@@ -83,7 +83,7 @@
   },
   "build": {
     "appId": "com.dsh.desktop-pet",
-    "productName": "DSH Desktop Pet",
+    "productName": "鲸鱼娘桌宠(纯桌宠版)",
     "compression": "maximum",
     "electronLanguages": [
       "zh-CN",
