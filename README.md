@@ -38,28 +38,30 @@
 - 已安装 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness)（自带 Node.js ≥ 18 与 pnpm）
 - 一个 DeepSeek API Key（[在 platform.deepseek.com 创建](https://platform.deepseek.com/api_keys)）
 
-### 方式一：从 GitHub 安装（推荐，无需等 npm 发布）
+### 安装到 DSH（一条命令搞定）
 
 ```sh
 dsh plugin --profile web add github:xiaoju-1229/dsh-whale-pet-balance
 ```
 
-### 方式二：本地路径安装（开发 / 想改代码）
+装完**重启 `dsh web`**，鲸鱼娘会自动出现在桌面。
 
-```sh
-git clone https://github.com/xiaoju-1229/dsh-whale-pet-balance.git
-cd dsh-whale-pet-balance
-dsh plugin --profile web add link:.
-```
+卸载：`dsh plugin --profile web remove dsh-whale-pet-balance`
 
-### 方式三：npm 安装（发布后可用）
+<details>
+<summary>其他来源（一般用不到）</summary>
 
-```sh
-dsh plugin --profile web add dsh-whale-pet-balance
-```
-
-> 任选其一即可。装完后**重启 `dsh web`**，鲸鱼娘会自动出现在桌面。
-> 卸载：`dsh plugin --profile web remove dsh-whale-pet-balance`。
+- **本地路径**（开发者 / 想改代码时）：
+  ```sh
+  git clone https://github.com/xiaoju-1229/dsh-whale-pet-balance.git
+  cd dsh-whale-pet-balance
+  dsh plugin --profile web add link:.
+  ```
+- **npm**（发布到 npm 商店后可用，届时最简洁）：
+  ```sh
+  dsh plugin --profile web add dsh-whale-pet-balance
+  ```
+</details>
 
 ## 🔑 配置 API Key（余额查询必需）
 
