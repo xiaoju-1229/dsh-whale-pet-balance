@@ -1,0 +1,86 @@
+# 鲸鱼娘余额 · DSH 桌面宠物 + DeepSeek 余额查看
+
+一只住在桌面上的鲸鱼娘桌宠，并集成了 DeepSeek 余额查看：**右键看余额、每轮对话花费、今日已用**。
+
+> 本项目派生自 [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet)（MIT），
+> 在其基础上集成了 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（MIT）
+> 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（MIT，详见 [NOTICE.md](NOTICE.md)）。
+
+## ✨ 特性
+
+### 桌宠（继承自原版）
+
+- 🐋 透明置顶、无边框 Electron 小窗，鲸鱼娘住在桌面陪你干活
+- 🔗 DSH Agent 状态联动：任务完成 🎉 庆祝 → 💤 睡会儿 → 自动醒；思考/等待/出错有专属动画
+- 🖱️ 左键拖拽、右键菜单、点击有反应
+- 🎮 成长账本：投喂/玩耍/陪伴 → XP / 等级 / 称号
+- 🎨 多角色兼容（Codex / petdex）、热配置
+
+### 余额查看（本分支新增）
+
+- 💰 **余额**：右键菜单「查看余额」→ 显示余额 + 今日已用 + 「充值 →」链接（跳 DeepSeek 官方充值页）
+- 💸 **每轮花费**：每轮对话结束后，鲸鱼娘右上角弹出本轮花费（精确 token 计费，约 5 秒）
+- 📊 **今日已用**：累计今日消费，跨天自动归零（存 `~/.dsh/.dsh-pet-usage.json`）
+- 计费按 DeepSeek 官方峰谷定价（工作日 9:00–12:00 / 14:00–18:00 高峰加倍，周末谷价）；
+  `deepseek-v4-pro` 为 flash 的 3 倍价
+
+## 📦 安装
+
+### 形态一：DSH 插件（带 Agent 状态联动）
+
+```sh
+# 从 npm 安装（发布后）
+dsh plugin --profile web add dsh-whale-pet-balance
+
+# 或本地路径安装（开发中）
+dsh plugin --profile web add link:.
+```
+
+安装后**重启 `dsh web`**。卸载：`dsh plugin --profile web remove dsh-whale-pet-balance`。
+
+### 配置凭据（余额查询必需）
+
+在 DSH 凭据文件 `~/.dsh/.credentials.yaml` 里配置 DeepSeek API 密钥：
+
+```yaml
+DEEPSEEK_API_KEY: sk-xxxxxxxx
+```
+
+> 未配置时桌宠照常运行，只是余额显示「未配置 DEEPSEEK_API_KEY」。
+
+### 形态二：独立 exe
+
+```sh
+npm install
+npm run dist          # 打包 Windows exe（nsis + portable）
+```
+
+## 🖱️ 使用
+
+- **左键拖拽**：移动鲸鱼娘
+- **右键菜单**：喂食 / 玩耍 / 查看余额 / 任务进度 / 详细进度 / 设置 / 退出
+
+**查看余额**（右键 →「💰 查看余额」）气泡显示：
+
+```
+💸 本轮花费 ¥0.0123
+📊 今日已用 ¥0.34
+💰 余额 ¥6.30 · 充值 →
+```
+
+点「充值 →」会用系统默认浏览器打开 DeepSeek 官方充值页
+（https://platform.deepseek.com/top_up）。
+
+**每轮花费**：每轮对话结束后，鲸鱼娘右上角自动弹出「💸 本轮花费 ¥X.XX」，约 5 秒后消失。
+
+## 📄 许可
+
+MIT License。
+
+本项目派生自以下 MIT 项目，请一并遵守其许可：
+
+- [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet) —— 桌宠本体
+- [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) —— 余额 / 计费逻辑
+- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 鲸鱼娘角色素材（ZipZipPipe 绘制）
+
+详见 [NOTICE.md](NOTICE.md)。

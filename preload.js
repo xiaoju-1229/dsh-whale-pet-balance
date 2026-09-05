@@ -1,0 +1,50 @@
+/**
+ * Preload — minimal secure bridge between the renderer and the main process.
+ * Exposes only the pet-specific surface under window.petAPI.
+ */
+const { contextBridge, ipcRenderer } = require("electron");
+
+contextBridge.exposeInMainWorld("petAPI", {
+  /** Resolve persisted { x, y, ledger } from disk. */
+  ready: () => ipcRenderer.invoke("pet:ready"),
+  /** Resolve current { config, roles } (config + installed characters). */
+  getConfig: () => ipcRenderer.invoke("pet:get-config"),
+  /** Resolve the characters/config folder paths (settings panel). */
+  getPaths: () => ipcRenderer.invoke("pet:paths"),
+  /** Open a folder in the OS file manager ("characters" | "config"). */
+  openPath: (which) => ipcRenderer.send("pet:open-path", which),
+  /** Ask the main process to move the window by a mouse delta (dip). */
+  moveTo: (dx, dy) => ipcRenderer.send("pet:move-to", dx, dy),
+  /** Capture the window position as the drag anchor (also cancels any walk). */
+  dragStart: () => ipcRenderer.send("pet:drag-start"),
+  /** Release the drag anchor. */
+  dragEnd: () => ipcRenderer.send("pet:drag-end"),
+  /** Ask the main process to drive a walk animation for durationMs. */
+  walkStart: (opts) => ipcRenderer.send("pet:walk-start", opts),
+  /** Persist the pet's growth ledger. */
+  saveLedger: (ledger) => ipcRenderer.send("pet:save-ledger", ledger),
+  /** Apply + persist a config patch (size / opacity / ...). */
+  setConfig: (patch) => ipcRenderer.send("pet:set-config", patch),
+  /** Subscribe to agent-state signals pushed from the DSH bundle Node half. */
+  onSignal: (cb) => {
+    ipcRenderer.on("pet:signal", (_event, signal) => cb(signal));
+  },
+  /** Toggle click-through (ignore mouse events). */
+  setClickThrough: (enabled) => ipcRenderer.send("pet:click-through", enabled),
+  /** Hide or show the pet window (hideWhenIdle auto-hide). */
+  setWindowVisible: (visible) => ipcRenderer.send("pet:set-window-visible", visible),
+  /** Toggle desktop-bottom mode (pin below other windows). */
+  setBottomMode: (enabled) => ipcRenderer.send("pet:bottom-mode", !!enabled),
+  /** Enlarge the window temporarily for the settings panel. */
+  openSettingsPanel: () => ipcRenderer.send("pet:panel-open"),
+  /** Restore the pet window size after the settings panel closes. */
+  closeSettingsPanel: () => ipcRenderer.send("pet:panel-close"),
+  /** Pop the native system click-menu at the given screen position. */
+  showMenu: (pos) => ipcRenderer.send("pet:show-menu", pos),
+  /** Native menu item chosen by the user. */
+  onMenuAction: (cb) => {
+    ipcRenderer.on("pet:menu-action", (_event, act) => cb(act));
+  },
+  /** Quit the app. */
+  quit: () => ipcRenderer.send("pet:quit"),
+});
