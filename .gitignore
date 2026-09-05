@@ -4,3 +4,7 @@ out/
 *.log
 .DS_Store
 Thumbs.db
+
+# 作者本地一键同步脚本（不随仓库发布）
+sync-to-github.ps1
+同步到GitHub.bat
