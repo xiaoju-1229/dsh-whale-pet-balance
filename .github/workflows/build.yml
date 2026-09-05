@@ -12,6 +12,8 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
+    permissions:
+      contents: write    # 创建 GitHub Release 需要写权限
     steps:
       - name: Checkout
         uses: actions/checkout@v4
