@@ -33,34 +33,56 @@
 
 ## 📦 安装
 
-### 形态一：DSH 插件（带 Agent 状态联动）
+### 前置要求
+
+- 已安装 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness)（自带 Node.js ≥ 18 与 pnpm）
+- 一个 DeepSeek API Key（[在 platform.deepseek.com 创建](https://platform.deepseek.com/api_keys)）
+
+### 方式一：从 GitHub 安装（推荐，无需等 npm 发布）
 
 ```sh
-# 从 npm 安装（发布后）
-dsh plugin --profile web add dsh-whale-pet-balance
+dsh plugin --profile web add github:xiaoju-1229/dsh-whale-pet-balance
+```
 
-# 或本地路径安装（开发中）
+### 方式二：本地路径安装（开发 / 想改代码）
+
+```sh
+git clone https://github.com/xiaoju-1229/dsh-whale-pet-balance.git
+cd dsh-whale-pet-balance
 dsh plugin --profile web add link:.
 ```
 
-安装后**重启 `dsh web`**。卸载：`dsh plugin --profile web remove dsh-whale-pet-balance`。
+### 方式三：npm 安装（发布后可用）
 
-### 配置凭据（余额查询必需）
+```sh
+dsh plugin --profile web add dsh-whale-pet-balance
+```
 
-在 DSH 凭据文件 `~/.dsh/.credentials.yaml` 里配置 DeepSeek API 密钥：
+> 任选其一即可。装完后**重启 `dsh web`**，鲸鱼娘会自动出现在桌面。
+> 卸载：`dsh plugin --profile web remove dsh-whale-pet-balance`。
+
+## 🔑 配置 API Key（余额查询必需）
+
+编辑 DSH 凭据文件 `~/.dsh/.credentials.yaml`
+（Windows 为 `C:\Users\<你的用户名>\.dsh\.credentials.yaml`）：
 
 ```yaml
 DEEPSEEK_API_KEY: sk-xxxxxxxx
 ```
 
-> 未配置时桌宠照常运行，只是余额显示「未配置 DEEPSEEK_API_KEY」。
+- API Key 在 https://platform.deepseek.com/api_keys 创建
+- 改完**重启 `dsh web`** 生效
+- 未配置时桌宠照常运行，只是余额显示「未配置 DEEPSEEK_API_KEY」
 
-### 形态二：独立 exe
+## 📦 独立 exe（可选）
 
 ```sh
 npm install
-npm run dist          # 打包 Windows exe（nsis + portable）
+npm run dist          # 生成 Windows exe（nsis + portable）
 ```
+
+> ⚠️ 独立 exe 只包含**桌宠本体**（动画 / 交互 / 成长），**不含余额查看和 DSH 状态联动**——
+> 那两项依赖 DSH 插件形态运行。
 
 ## 🖱️ 使用
 
