@@ -11,7 +11,7 @@
 来源：GitHub 仓库 xiaoju-1229/dsh-whale-pet-balance。
 步骤：
 1. 执行 dsh plugin --profile web add github:xiaoju-1229/dsh-whale-pet-balance
-2. 输入你的 DeepSeek API Key（sk- 开头），帮我写入凭据文件 ~/.dsh/.credentials.yaml 的 DEEPSEEK_API_KEY
+2. 输入你的 DeepSeek API Key：，帮我写入凭据文件 ~/.dsh/.credentials.yaml 的 DEEPSEEK_API_KEY
 3. 重启 dsh web，确认桌宠出现在桌面
 4. 验证：右键桌宠能看到「💰 查看余额」
 ```
