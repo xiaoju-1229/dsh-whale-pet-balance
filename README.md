@@ -4,7 +4,7 @@
 
 > 本项目派生自 [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet)（MIT），
 > 在其基础上集成了 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（MIT）
-> 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（MIT，详见 [NOTICE.md](NOTICE.md)）。
+> 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（作者 vlln，画师 ZipZipPipe，MIT，详见 [NOTICE.md](NOTICE.md)）。
 
 ## 🚀 快速开始（新手 3 步）
 
@@ -80,7 +80,7 @@ DEEPSEEK_API_KEY: sk-你复制的Key
 
 - [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet) —— 作者 [AsahiMoon](https://github.com/AsahiMoon)，桌宠本体（Electron 桌宠、状态机、DSH 联动）
 - [DeepSeek-Balance-Whale-Widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) —— 作者 [MeteorNOX](https://github.com/MeteorNOX)，余额查询与峰谷计费逻辑
-- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 鲸鱼娘角色素材（ZipZipPipe 绘制）
+- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 作者 vlln，鲸鱼娘角色素材（画师 ZipZipPipe）
 
 三个上游项目均以 MIT License 开源，本合并版本同样以 MIT License 发布。
 
@@ -92,6 +92,6 @@ MIT License。
 
 - [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet) —— 桌宠本体
 - [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) —— 余额 / 计费逻辑
-- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 鲸鱼娘角色素材（ZipZipPipe 绘制）
+- [vlln/whale-girl](https://github.com/vlln/whale-girl) —— 作者 vlln，鲸鱼娘角色素材（画师 ZipZipPipe）
 
 详见 [NOTICE.md](NOTICE.md)。

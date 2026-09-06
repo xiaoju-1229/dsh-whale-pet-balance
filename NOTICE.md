@@ -24,8 +24,8 @@ NOTICE
 
 - 宠物 sprite 素材（assets/characters/whale-girl/*.png）与动画表
   （assets/characters/whale-girl/manifest.json）来自
-  https://github.com/vlln/whale-girl —— 该插件以 MIT License 发布。
-  - 角色形象（鲸鱼娘 / whale-girl）由 ZipZipPipe 绘制。
+  https://github.com/vlln/whale-girl（作者 vlln）—— 该插件以 MIT License 发布。
+  - 角色形象（鲸鱼娘 / whale-girl）由画师 ZipZipPipe 绘制。
   - whale-girl 项目 LICENSE 全文随素材保留于其原仓库。
 
 ## 运行时
