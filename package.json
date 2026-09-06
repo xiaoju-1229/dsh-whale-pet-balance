@@ -1,6 +1,6 @@
 {
   "name": "dsh-whale-pet-balance",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "DSH 桌面宠物（鲸鱼娘）+ DeepSeek 余额查看：右下角鲸鱼娘桌宠，右键查看余额/每轮花费/今日已用，支持拖拽、菜单、任务进度联动。基于 @asahimoon/dsh-desktop-pet 派生，集成 dsh-whale-widget 的余额与计费逻辑。",
   "main": "index.mjs",
   "exports": {

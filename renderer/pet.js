@@ -686,7 +686,7 @@ function availableActions() {
   actions.push("balance");
   actions.push(CONFIG.taskBarPersistent ? "task-off" : "task-on");
   actions.push(CONFIG.taskBarDetailed ? "detail-off" : "detail-on");
-  actions.push("sep", "settings", "uninstall-data", "quit");
+  actions.push("sep", "settings", "quit");
   return actions;
 }
 

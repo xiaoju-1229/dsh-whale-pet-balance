@@ -818,25 +818,6 @@ function toggleWindow() {
   else win.show();
 }
 
-/** 卸载便携版：删除本应用留在系统里的所有数据（%APPDATA%/dsh-desktop-pet）后退出。 */
-function clearPetDataAndQuit() {
-  try {
-    const dir = app.getPath("userData");
-    // 延迟一下，让当前菜单事件处理完再删，避免占用冲突
-    setTimeout(() => {
-      try {
-        fs.rmSync(dir, { recursive: true, force: true });
-        console.log("[pet] user data cleared:", dir);
-      } catch (e) {
-        console.error("[pet] clear data failed:", e.message);
-      }
-      app.exit(0); // 跳过 before-quit 的再次保存，直接退出
-    }, 150);
-  } catch (e) {
-    app.exit(0);
-  }
-}
-
 // ---------------------------------------------------------------------------
 // settings window: a SEPARATE window so the pet window never enlarges
 // ---------------------------------------------------------------------------
@@ -1056,7 +1037,6 @@ function setupIpc() {
     "detail-off": { label: "📋 简略进度" },
     settings: { label: "⚙️ 设置" },
     quit: { label: "❎ 退出" },
-    "uninstall-data": { label: "🗑️ 卸载并清除数据" },
   };
   ipcMain.on("pet:show-menu", (_e, pos) => {
     if (!win || win.isDestroyed()) return;
@@ -1073,7 +1053,6 @@ function setupIpc() {
         label: def.label,
         click: () => {
           if (action === "quit") app.quit();
-          else if (action === "uninstall-data") clearPetDataAndQuit();
           else sendMenuAction(action);
         },
       });
