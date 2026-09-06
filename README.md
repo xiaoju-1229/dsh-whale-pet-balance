@@ -15,7 +15,6 @@
 3. 重启 dsh web 并确认桌宠出现在桌面；若没出现（说明环境缺 Electron），帮我补装：
    执行 dsh plugin --profile web add electron，再编辑 profiles/web/pnpm-workspace.yaml 在 allowBuilds 下加 electron: true，重新安装直到桌宠出现
 4. 验证：右键桌宠能看到「💰 查看余额」
-4. 验证：右键桌宠能看到「💰 查看余额」
 ```
 
 > ⚠️ **两种形态别搞混**：
