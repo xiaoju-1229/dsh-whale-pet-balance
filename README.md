@@ -31,7 +31,7 @@ DEEPSEEK_API_KEY: sk-你复制的Key
 
 > ⚠️ **两种形态别搞混**：
 > - **DSH 插件**（上面的装法）＝ **完整版**：鲸鱼娘 + 余额 / 每轮花费 / DSH 状态联动
-> - **Release 里的 exe**（[下载页](https://github.com/xiaoju-1229/dsh-whale-pet-balance/releases)）＝ **纯桌宠**：只有鲸鱼娘动画、喂食/玩耍/成长，**不含余额查看和 DSH 联动**
+> - **Release 里的 exe**（[下载页](https://github.com/xiaoju-1229/dsh-whale-pet-balance/releases)）＝ **纯桌宠**：只有鲸鱼娘动画
 >
 > 想要完整功能，请按上面「快速开始」装 DSH 插件，别只下 exe。
 
