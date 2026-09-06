@@ -2,13 +2,9 @@
 
 一只住在桌面上的鲸鱼娘桌宠，并集成了 DeepSeek 余额查看：**右键看余额、每轮对话花费、今日已用**。
 
-> 本项目派生自 [@asahimoon/dsh-desktop-pet](https://github.com/AsahiMoon/dsh-desktop-pet)（MIT），
-> 在其基础上集成了 [dsh-whale-widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget)（MIT）
-> 的余额查询与计费逻辑。角色素材来自 [vlln/whale-girl](https://github.com/vlln/whale-girl)（作者 vlln，画师 ZipZipPipe，MIT，详见 [NOTICE.md](NOTICE.md)）。
-
 ## 🤖 让 AI 帮你装（最简单，不用记命令）
 
-把下面这段话**原样复制**，发给你的 DSH / AI 助手，它会自动帮你安装完成：
+把下面这段话**原样复制**，发给你的 DSH ，它会自动帮你安装完成：
 
 ```text
 请帮我安装插件 dsh-whale-pet-balance（DeepSeek 鲸鱼娘余额桌宠）。
@@ -20,19 +16,12 @@
 4. 验证：右键桌宠能看到「💰 查看余额」
 ```
 
-> 还没有 DSH？先装 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)；需要 [DeepSeek API Key](https://platform.deepseek.com/api_keys)（余额功能必需）。
-
 > ⚠️ **两种形态别搞混**：
 > - **DSH 插件**（AI 装的就是这个）＝ **完整版**：鲸鱼娘 + 余额 / 每轮花费 / DSH 状态联动
 > - **Release 里的 exe**（[下载页](https://github.com/xiaoju-1229/dsh-whale-pet-balance/releases)）＝ **纯桌宠**：只有鲸鱼娘动画
 >
 > 想要完整功能请装 DSH 插件，别只下 exe。
 
-## 🎯 核心亮点
-
-- 🐋💰 **一鱼两用**：会动的桌面桌宠 + DeepSeek 余额管家，合二为一
-- 🎯 **精确计费**：每轮对话按真实 token 用量 + 官方峰谷价换算，不是估算
-- ⚡ **即装即用**：一条命令安装，重启 `dsh web` 即生效
 
 ## ✨ 特性
 
@@ -64,7 +53,6 @@
 点「充值 →」会用系统默认浏览器打开 DeepSeek 官方充值页
 （https://platform.deepseek.com/top_up）。
 
-**每轮花费**：每轮对话结束后，鲸鱼娘右上角自动弹出「💸 本轮花费 ¥X.XX」，约 5 秒后消失。
 
 ## 📄 许可与致谢
 
