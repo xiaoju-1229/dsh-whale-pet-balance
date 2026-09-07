@@ -721,7 +721,7 @@ function bubble(text) {
 let bubbleTimer = 0;
 let costBubbleTimer = 0;
 
-/** 查看余额：把 Node half 推送的余额快照显示在气泡里（比普通气泡留得更久）。
+/** 查看账单：把 Node half 推送的余额快照显示在气泡里（比普通气泡留得更久）。
  *  「充值」渲染成一个可点击链接，点击跳转 DeepSeek 官方充值页。 */
 function showBalance() {
   const b = balanceInfo;
@@ -953,7 +953,7 @@ let runHistory = [];
 let balanceInfo = null;
 // 今日已用（累计金额，来自 Node half 的 turn-cost / balance 信号）。
 let todayUsage = 0;
-// 最近一轮对话的花费（turn-cost 信号更新，用于「查看余额」第一行）。
+// 最近一轮对话的花费（turn-cost 信号更新，用于「查看账单」第一行）。
 let lastTurnCost = null;
 
 function trackTaskSignal(signal) {
@@ -992,7 +992,7 @@ function handleSignal(signal) {
     return;
   }
   if (signal.type === "balance") {
-    // periodic balance push — cache it for the "查看余额" menu action (never
+    // periodic balance push — cache it for the "查看账单" menu action (never
     // treated as agent activity, so it won't keep the pet awake)
     balanceInfo = signal;
     if (Number.isFinite(Number(signal.todayUsage))) todayUsage = Number(signal.todayUsage);

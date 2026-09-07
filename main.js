@@ -1030,7 +1030,7 @@ function setupIpc() {
   const ACTION_DEFS = {
     feed: { label: "🍗 喂食" },
     play: { label: "🎾 玩耍" },
-    balance: { label: "💰 查看余额" },
+    balance: { label: "💰 查看账单" },
     "task-on": { label: "📋 常驻任务进度" },
     "task-off": { label: "📋 关闭任务进度" },
     "detail-on": { label: "📋 详细进度" },
