@@ -726,7 +726,7 @@ function createWindow() {
     win = null;
   });
   win.loadFile(path.join(ROOT, "renderer", "index.html"));
-  // 外部链接（如余额气泡里的「充值 →」）交给系统默认浏览器打开，
+  // 外部链接（如账单气泡里的「充值 →」）交给系统默认浏览器打开，
   // 而不是在桌宠透明窗口里导航，避免整个桌宠被网页替换掉。
   win.webContents.setWindowOpenHandler(({ url }) => {
     if (/^https?:\/\//i.test(url)) shell.openExternal(url);

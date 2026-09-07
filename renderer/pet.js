@@ -721,7 +721,7 @@ function bubble(text) {
 let bubbleTimer = 0;
 let costBubbleTimer = 0;
 
-/** 查看账单：把 Node half 推送的余额快照显示在气泡里（比普通气泡留得更久）。
+/** 查看账单：把 Node half 推送的账单快照显示在气泡里（比普通气泡留得更久）。
  *  「充值」渲染成一个可点击链接，点击跳转 DeepSeek 官方充值页。 */
 function showBalance() {
   const b = balanceInfo;
@@ -729,9 +729,9 @@ function showBalance() {
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   let html;
   if (!b) {
-    html = "💰 余额还没更新，稍等一会儿~";
+    html = "💰 账单还没更新，稍等一会儿~";
   } else if (!b.ok) {
-    html = b.error ? `💰 ${esc(b.error)}` : "💰 查询余额失败";
+    html = b.error ? `💰 ${esc(b.error)}` : "💰 查询账单失败";
   } else {
     const cur = b.currency || "CNY";
     const symbol = cur === "CNY" ? "¥" : cur === "USD" ? "$" : esc(cur) + " ";
@@ -745,8 +745,8 @@ function showBalance() {
     lines.push(`💸 本轮花费 ${symbol}${lastTurnCost == null ? "--" : money(lastTurnCost)}`);
     // 第二行：今日已用
     lines.push(`📊 今日已用 ${symbol}${money(todayUsage)}`);
-    // 第三行：余额 + 充值
-    let third = `💰 余额 ${symbol}${money(b.totalBalance)}`;
+    // 第三行：账单 + 充值
+    let third = `💰 账单 ${symbol}${money(b.totalBalance)}`;
     if (Number(b.grantedBalance) > 0) third += ` · 赠送 ${symbol}${money(b.grantedBalance)}`;
     third += ` · <a class="balance-link" href="https://platform.deepseek.com/top_up" target="_blank" title="前往 DeepSeek 官方充值页">充值 →</a>`;
     lines.push(third);
