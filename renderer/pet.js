@@ -729,9 +729,9 @@ function showBalance() {
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   let html;
   if (!b) {
-    html = "💰 账单还没更新，稍等一会儿~";
+    html = "💰 余额还没更新，稍等一会儿~";
   } else if (!b.ok) {
-    html = b.error ? `💰 ${esc(b.error)}` : "💰 查询账单失败";
+    html = b.error ? `💰 ${esc(b.error)}` : "💰 查询余额失败";
   } else {
     const cur = b.currency || "CNY";
     const symbol = cur === "CNY" ? "¥" : cur === "USD" ? "$" : esc(cur) + " ";
@@ -745,8 +745,8 @@ function showBalance() {
     lines.push(`💸 本轮花费 ${symbol}${lastTurnCost == null ? "--" : money(lastTurnCost)}`);
     // 第二行：今日已用
     lines.push(`📊 今日已用 ${symbol}${money(todayUsage)}`);
-    // 第三行：账单 + 充值
-    let third = `💰 账单 ${symbol}${money(b.totalBalance)}`;
+    // 第三行：余额 + 充值
+    let third = `💰 余额 ${symbol}${money(b.totalBalance)}`;
     if (Number(b.grantedBalance) > 0) third += ` · 赠送 ${symbol}${money(b.grantedBalance)}`;
     third += ` · <a class="balance-link" href="https://platform.deepseek.com/top_up" target="_blank" title="前往 DeepSeek 官方充值页">充值 →</a>`;
     lines.push(third);
